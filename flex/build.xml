@@ -1,0 +1,24 @@
+<project name="MultipleFileUpload" default="compile" basedir=".">
+
+	<!-- Define variables/paths used in this build script -->
+	<property file="./build.properties" />
+
+	<target name="compile">
+		<exec executable="${mxmlc.exe}">
+
+			<!-- Specify the mxml / Class to compile -->
+			<arg line="${mxmldir}/MultipleFileUpload.mxml" />
+
+			<!-- Specify the name of the output file -->
+			<arg line="-output '${deploydir}/MultipleFileUpload.swf'" />
+
+			<!-- Specify the parameters for the resulting swf -->
+			<arg line="-default-frame-rate=31" />
+			<arg line="-default-background-color=0xFFFFFF" />
+			<arg line="-default-size 550 400" />
+			
+			<arg line="-source-path '${classesdir}' -library-path '${flex3sdk.lib.dir}' -library-path '${flex3sdk.locale.dir}' -strict=true" />
+		</exec>
+	</target>
+</project>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<custom:Main xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:local="*"
+	xmlns:custom="*" layout="horizontal" backgroundAlpha="0">
+
+	<mx:HBox width="100%">
+		<mx:VBox id="fileContainer" width="100%">
+			<mx:VBox id="fileUploadBox" maxHeight="280" width="100%"
+				label="Files to Upload">
+			</mx:VBox>
+			<mx:HBox id="uploadStats" width="100%" visible="false">
+				<mx:Text text="Total Files:" />
+				<mx:Text id="totalFiles" />
+				<mx:Text text="Total Size:" />
+				<mx:Text id="totalSize" />
+			</mx:HBox>
+			<mx:ProgressBar id="totalProgressBar" width="275"
+				mode="manual" visible="false" />
+		</mx:VBox>
+
+		<mx:VBox width="100">
+			<mx:Button id="browseButton" label="Add Files" width="100" />
+			<mx:Button id="clearButton" label="Clear Files"
+				visible="false" width="100" />
+			<mx:Button id="uploadButton" label="Upload Files"
+				visible="false" width="100" />
+			<mx:Button id="cancelButton" label="Cancel Upload"
+				visible="false" width="100" />
+			<mx:Text id="mytext" />
+		</mx:VBox>
+	</mx:HBox>
+</custom:Main>

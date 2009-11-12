@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="urn:MultipleFileUpload-schema" 
+           attributeFormDefault="unqualified" 
+           elementFormDefault="qualified" 
+           xmlns:mfu="urn:MultipleFileUpload-schema" 
+           xmlns="http://www.w3.org/2001/XMLSchema">
+  
+  <element name="multipleFileUpload" type="mfu:multipleFileUpload_type" />
+
+  <complexType name="multipleFileUpload_type">
+    <sequence>
+      <element maxOccurs="unbounded" name="mediaFacory" type="mfu:mediaFacory_type" minOccurs="1" />
+    </sequence>
+  </complexType>
+
+  <complexType name="mediaFacory_type">
+    <sequence>
+      <element name="extensions" type="mfu:extension_type" maxOccurs="1" minOccurs="1" />
+    </sequence>
+    <attribute name="assembly" type="string" use="required" />
+    <attribute name="namespace" type="string" use="optional" />
+    <attribute name="type" type="string" use="required" />
+  </complexType>
+  
+  <complexType name="extension_type">
+    <sequence>
+      <element maxOccurs="unbounded" name="ext" type="string" />
+    </sequence>
+  </complexType>
+  
+</schema>

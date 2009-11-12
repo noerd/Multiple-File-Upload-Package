@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Segoe UI" Size="9" />
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.DefaultFileMediaFactory" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DefaultFileMediaFactory.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.DefaultImageMediaFactory" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DefaultImageMediaFactory.cs</FileName>
+      <HashCode>AAAABCAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.MediaFactory" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MediaFactory.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.MultipleFileUpload" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MultipleFileUpload.cs</FileName>
+      <HashCode>EAAAAYAABQAACgAAQAAABAACAAgAAAQAAIAAAICAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.MultipleFileUploadControl" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MultipleFileUploadControl.cs</FileName>
+      <HashCode>AAgAQAAAAAADAgIAAAAAAABAACAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.MultipleFileUploadDataType" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MultipleFileUploadDataType.cs</FileName>
+      <HashCode>AAACAAAAAAgAIAAAAAAAAAAAQAAAABAAAAIAADAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="noerd.Umb.DataTypes.multipleFileUpload.MultipleFileUploadHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MultipleFileUploadHandler.cs</FileName>
+      <HashCode>AAAAAAAABAAQAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="noerd.Umb.DataTypes.multipleFileUpload.IMediaFactory" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IMediaFactory.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

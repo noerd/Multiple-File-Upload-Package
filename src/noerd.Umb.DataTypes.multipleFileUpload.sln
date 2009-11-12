@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "noerd.Umb.DataTypes.multipleFileUpload", "noerd.Umb.DataTypes.multipleFileUpload\noerd.Umb.DataTypes.multipleFileUpload.csproj", "{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\noerd.Umb.DataTypes.multipleFileUpload.web\", "noerd.Umb.DataTypes.multipleFileUpload.web\", "{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}"
+	ProjectSection(WebsiteProperties) = preProject
+		ProjectReferences = "{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}|noerd.Umb.DataTypes.multipleFileUpload.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/noerd.Umb.DataTypes.multipleFileUpload.web"
+		Debug.AspNetCompiler.PhysicalPath = "noerd.Umb.DataTypes.multipleFileUpload.web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\noerd.Umb.DataTypes.multipleFileUpload.web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/noerd.Umb.DataTypes.multipleFileUpload.web"
+		Release.AspNetCompiler.PhysicalPath = "noerd.Umb.DataTypes.multipleFileUpload.web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\noerd.Umb.DataTypes.multipleFileUpload.web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52806"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Release|.NET.ActiveCfg = Release|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Debug|.NET.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Debug|.NET.Build.0 = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Release|.NET.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Release|.NET.Build.0 = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
