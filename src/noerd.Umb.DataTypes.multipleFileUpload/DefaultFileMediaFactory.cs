@@ -1,5 +1,6 @@
 using System.Web;
 using umbraco.BasePages;
+using umbraco.BusinessLogic;
 using umbraco.BusinessLogic.console;
 using umbraco.cms.businesslogic.media;
 
@@ -21,7 +22,7 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
             // Create new media object
             Media media = Media.MakeNew(filename, MediaType.GetByAlias("File"),
-                                      UmbracoEnsuredPage.CurrentUser, parent.Id);
+                                      new User(0), parent.Id);
 
             // Get umbracoFile property
             int propertyId = media.getProperty("umbracoFile").Id;

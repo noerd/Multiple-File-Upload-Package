@@ -1,14 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "noerd.Umb.DataTypes.multipleFileUpload", "noerd.Umb.DataTypes.multipleFileUpload\noerd.Umb.DataTypes.multipleFileUpload.csproj", "{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\noerd.Umb.DataTypes.multipleFileUpload.web\", "noerd.Umb.DataTypes.multipleFileUpload.web\", "{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "noerd.Umb.DataTypes.multipleFileUpload.web", "noerd.Umb.DataTypes.multipleFileUpload.web\", "{A9C25B46-9964-40E4-88A7-3ACC62BFCB0B}"
 	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		ProjectReferences = "{D5F35EDC-0F02-4C99-B64E-F82DE91C7D9C}|noerd.Umb.DataTypes.multipleFileUpload.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/noerd.Umb.DataTypes.multipleFileUpload.web"
 		Debug.AspNetCompiler.PhysicalPath = "noerd.Umb.DataTypes.multipleFileUpload.web\"

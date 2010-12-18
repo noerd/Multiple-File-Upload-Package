@@ -34,7 +34,7 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
             // Create new media object
             Media media = Media.MakeNew(filename, MediaType.GetByAlias("Image"),
-                                      UmbracoEnsuredPage.CurrentUser, parent.Id);
+                                      new User(0), parent.Id);
 
             // Get Image object, width and height
             Image image = Image.FromStream(uploadFile.InputStream);
@@ -158,7 +158,7 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
             else
             {
                 // Log error
-                Log.Add(LogTypes.Error, UmbracoEnsuredPage.CurrentUser, -1, "Multiple file upload: Can't find appropriate codec");
+                Log.Add(LogTypes.Error, new User(0), -1, "Multiple file upload: Can't find appropriate codec");
             }
 
             bp.Dispose();

@@ -99,7 +99,7 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
         public static void Log(LogTypes logType, int nodeId, string message)
         {
-            umbraco.BusinessLogic.Log.Add(logType, UmbracoEnsuredPage.CurrentUser, nodeId, "Multiple file upload: " + message);
+            umbraco.BusinessLogic.Log.Add(logType, new User(0), nodeId, "Multiple file upload: " + message);
 
             if (logType.Equals(LogTypes.Error) || logType.Equals(LogTypes.LoginFailure))
                 throw new ApplicationException(message);
@@ -169,10 +169,6 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
                     IMediaFactory factory = GetMediaFactory(uploadFile);
                     // Create media Item
                     Media media = factory.CreateMedia(parentNode, uploadFile);
-                    // Save media
-                    media.Save();
-                    // Genereate xml cache
-                    media.XmlGenerate(new XmlDocument());
 
                     // Get path
                     int propertyId = media.getProperty("umbracoFile").Id;
@@ -188,6 +184,11 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
                     // Close stream
                     uploadFile.InputStream.Close();
+
+                    // Save media
+                    media.Save();
+                    // Genereate xml cache
+                    media.XmlGenerate(new XmlDocument());
                 }
             }
         }
