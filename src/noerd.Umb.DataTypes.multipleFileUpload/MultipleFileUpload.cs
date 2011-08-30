@@ -149,49 +149,53 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
         // Public members
         // -------------------------------------------------------------------------
 
-        public static void HandleUpload(HttpContext context, int nodeId)
-        {
-            context.Response.Write(context.Request.Files.Count);
+		public static void HandleUpload(HttpContext context, int nodeId)
+		{
+			context.Response.Write(context.Request.Files.Count);
 
-            // loop through uploaded files
-            for (int j = 0; j < context.Request.Files.Count; j++)
-            {
-                // get parent node
-                Media parentNode = new Media(nodeId);
+			// loop through uploaded files
+			for (int j = 0; j < context.Request.Files.Count; j++)
+			{
+				// get parent node
+				Media parentNode = new Media(nodeId);
 
-                // get the current file
-                HttpPostedFile uploadFile = context.Request.Files[j];
+				// get the current file
+				HttpPostedFile uploadFile = context.Request.Files[j];
 
-                // if there was a file uploded
-                if (uploadFile.ContentLength > 0)
-                {
-                    // Get concrete MediaFactory
-                    IMediaFactory factory = GetMediaFactory(uploadFile);
-                    // Create media Item
-                    Media media = factory.CreateMedia(parentNode, uploadFile);
+				// if there was a file uploded
+				if (uploadFile.ContentLength > 0)
+				{
+					// Get concrete MediaFactory
+					IMediaFactory factory = GetMediaFactory(uploadFile);
 
-                    // Get path
-                    int propertyId = media.getProperty("umbracoFile").Id;
-                    string path = HttpContext.Current.Server.MapPath(factory.ConstructRelativeDestPath(propertyId));
+					//Get the safe file name
+					string fileName = factory.SafeFileName(uploadFile.FileName);
 
-                    // Create directory
-                    if (UmbracoSettings.UploadAllowDirectories)
-                        Directory.CreateDirectory(path);
+					// Create media Item
+					Media media = factory.CreateMedia(parentNode, uploadFile);
 
-                    // Save file
-                    string filePath = Path.Combine(path, uploadFile.FileName);
-                    uploadFile.SaveAs(filePath);
+					// Get path
+					int propertyId = media.getProperty("umbracoFile").Id;
+					string path = HttpContext.Current.Server.MapPath(factory.ConstructRelativeDestPath(propertyId));
 
-                    // Close stream
-                    uploadFile.InputStream.Close();
+					// Create directory
+					if (UmbracoSettings.UploadAllowDirectories)
+						Directory.CreateDirectory(path);
 
-                    // Save media
-                    media.Save();
-                    // Genereate xml cache
-                    media.XmlGenerate(new XmlDocument());
-                }
-            }
-        }
+					// Save file
+					string filePath = Path.Combine(path, fileName);
+					uploadFile.SaveAs(filePath);
+
+					// Close stream
+					uploadFile.InputStream.Close();
+
+					// Save media
+					media.Save();
+					// Genereate xml cache
+					media.XmlGenerate(new XmlDocument());
+				}
+			}
+		} 
 
         // IDataEditor Members
         // -------------------------------------------------------------------------

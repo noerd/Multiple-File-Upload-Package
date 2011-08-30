@@ -28,5 +28,12 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
         /// <param name="propertyId">The umbracoFile property id</param>
         /// <returns>The path to the folder where the uploaded file will be placed.</returns>
         string ConstructRelativeDestPath(int propertyId);
+
+		/// <summary>
+		/// Function for handling illegal characters in the file name.
+		/// </summary>
+		/// <param name="url">The uploaded file name.</param>
+		/// <returns>The safe file name that the uploaded file will be saved with.</returns>
+		string SafeFileName(string fileName); 
     }
 }

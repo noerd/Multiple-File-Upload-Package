@@ -28,46 +28,47 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
         #region IMediaFactory Members
 
-        public override Media CreateMedia(IconI parent, HttpPostedFile uploadFile)
-        {
-            string filename = uploadFile.FileName;
+		public override Media CreateMedia(IconI parent, HttpPostedFile uploadFile)
+		{
+			//Get the safe file name
+			string filename = SafeFileName(uploadFile.FileName);
 
-            // Create new media object
-            Media media = Media.MakeNew(filename, MediaType.GetByAlias("Image"),
-                                      new User(0), parent.Id);
+			// Create new media object
+			Media media = Media.MakeNew(filename, MediaType.GetByAlias("Image"),
+									  new User(0), parent.Id);
 
-            // Get Image object, width and height
-            Image image = Image.FromStream(uploadFile.InputStream);
-            int fileWidth = image.Width;
-            int fileHeight = image.Height;
+			// Get Image object, width and height
+			Image image = Image.FromStream(uploadFile.InputStream);
+			int fileWidth = image.Width;
+			int fileHeight = image.Height;
 
-            // Get umbracoFile property
-            int propertyId = media.getProperty("umbracoFile").Id;
+			// Get umbracoFile property
+			int propertyId = media.getProperty("umbracoFile").Id;
 
-            // Get paths
-            string relativeDestPath = ConstructRelativeDestPath(propertyId);
-            string relativeDestFilePath = VirtualPathUtility.Combine(relativeDestPath, filename);
-            string ext = VirtualPathUtility.GetExtension(filename).Substring(1);
+			// Get paths
+			string relativeDestPath = ConstructRelativeDestPath(propertyId);
+			string relativeDestFilePath = VirtualPathUtility.Combine(relativeDestPath, filename);
+			string ext = VirtualPathUtility.GetExtension(filename).Substring(1);
 
-            // Set media properties
-            SetImageMediaProperties(media, relativeDestFilePath, fileWidth, fileHeight, uploadFile.ContentLength, ext);
+			// Set media properties
+			SetImageMediaProperties(media, relativeDestFilePath, fileWidth, fileHeight, uploadFile.ContentLength, ext);
 
-            // Create directory
-            if (UmbracoSettings.UploadAllowDirectories)
-                Directory.CreateDirectory(HttpContext.Current.Server.MapPath(relativeDestPath));
+			// Create directory
+			if (UmbracoSettings.UploadAllowDirectories)
+				Directory.CreateDirectory(HttpContext.Current.Server.MapPath(relativeDestPath));
 
-            // Generate thumbnail
-            string absoluteDestPath = HttpContext.Current.Server.MapPath(relativeDestPath);
-            string absoluteDestFilePath = Path.Combine(absoluteDestPath, Path.GetFileNameWithoutExtension(filename) + "_thumb");
-            GenerateThumbnail(image, 100, fileWidth, fileHeight, absoluteDestFilePath + ".jpg");
+			// Generate thumbnail
+			string absoluteDestPath = HttpContext.Current.Server.MapPath(relativeDestPath);
+			string absoluteDestFilePath = Path.Combine(absoluteDestPath, Path.GetFileNameWithoutExtension(filename) + "_thumb");
+			GenerateThumbnail(image, 100, fileWidth, fileHeight, absoluteDestFilePath + ".jpg");
 
-            // Generate additional thumbnails based on PreValues set in DataTypeDefinition uploadField
-            GenerateAdditionalThumbnails(image, fileWidth, fileHeight, absoluteDestFilePath);
+			// Generate additional thumbnails based on PreValues set in DataTypeDefinition uploadField
+			GenerateAdditionalThumbnails(image, fileWidth, fileHeight, absoluteDestFilePath);
 
-            image.Dispose();
+			image.Dispose();
 
-            return media;
-        }
+			return media;
+		}
 
         // -------------------------------------------------------------------------
         // Private members
