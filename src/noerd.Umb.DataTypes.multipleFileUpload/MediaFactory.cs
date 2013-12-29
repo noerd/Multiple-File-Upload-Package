@@ -2,6 +2,8 @@ using umbraco;
 using umbraco.cms.businesslogic.media;
 using umbraco.BusinessLogic.console;
 using System.Web;
+using System;
+using System.Text.RegularExpressions;
 
 namespace noerd.Umb.DataTypes.multipleFileUpload
 {
@@ -37,5 +39,13 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
             return VirtualPathUtility.ToAbsolute(MEDIA_PATH);
         }
+
+		public string SafeFileName(string fileName)
+		{
+			if (!String.IsNullOrEmpty(fileName))
+				return Regex.Replace(fileName, @"[^a-zA-Z0-9\-\.\/\:]{1}", "_");
+			else
+				return String.Empty;
+		}
     }
 }

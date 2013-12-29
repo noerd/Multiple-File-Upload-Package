@@ -16,24 +16,25 @@ namespace noerd.Umb.DataTypes.multipleFileUpload
 
         #region IMediaFactory Members
 
-        public override Media CreateMedia(IconI parent, HttpPostedFile uploadFile)
-        {
-            string filename = uploadFile.FileName;
+		public override Media CreateMedia(IconI parent, HttpPostedFile uploadFile)
+		{
+			//Get the safe file name
+			string filename = SafeFileName(uploadFile.FileName);
 
-            // Create new media object
-            Media media = Media.MakeNew(filename, MediaType.GetByAlias("File"),
-                                      new User(0), parent.Id);
+			// Create new media object
+			Media media = Media.MakeNew(filename, MediaType.GetByAlias("File"),
+									  new User(0), parent.Id);
 
-            // Get umbracoFile property
-            int propertyId = media.getProperty("umbracoFile").Id;
+			// Get umbracoFile property
+			int propertyId = media.getProperty("umbracoFile").Id;
 
-            // Set media properties
-            media.getProperty("umbracoFile").Value = VirtualPathUtility.Combine(ConstructRelativeDestPath(propertyId), filename);
-            media.getProperty("umbracoBytes").Value = uploadFile.ContentLength;
-            media.getProperty("umbracoExtension").Value = VirtualPathUtility.GetExtension(filename).Substring(1);
+			// Set media properties
+			media.getProperty("umbracoFile").Value = VirtualPathUtility.Combine(ConstructRelativeDestPath(propertyId), filename);
+			media.getProperty("umbracoBytes").Value = uploadFile.ContentLength;
+			media.getProperty("umbracoExtension").Value = VirtualPathUtility.GetExtension(filename).Substring(1);
 
-            return media;
-        }
+			return media;
+		} 
 
         #endregion
     }
